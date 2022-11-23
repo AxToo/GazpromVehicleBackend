@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromVehicleBackend", "GazpromVehicleBackend\GazpromVehicleBackend.csproj", "{F8B77FE1-2507-422B-94BE-E29D92C61C2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromVehicleBackend.Shared", "GazpromVehicleBackend.Shared\GazpromVehicleBackend.Shared.csproj", "{90971066-512F-4A31-B9FB-3D785EA72EA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromVehicleBackend.BusinessLayer", "GazpromVehicleBackend.BusinessLayer\GazpromVehicleBackend.BusinessLayer.csproj", "{89FEBFDF-D7CB-4BA0-BB06-B52F09486A78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GazpromVehicleBackEnd.DataAccessLayer", "GazpromVehicleBackEnd.DataAccessLayer\GazpromVehicleBackEnd.DataAccessLayer.csproj", "{AA9A7727-AB7D-4DE4-B469-3C261C15B8CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B77FE1-2507-422B-94BE-E29D92C61C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B77FE1-2507-422B-94BE-E29D92C61C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B77FE1-2507-422B-94BE-E29D92C61C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B77FE1-2507-422B-94BE-E29D92C61C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90971066-512F-4A31-B9FB-3D785EA72EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90971066-512F-4A31-B9FB-3D785EA72EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90971066-512F-4A31-B9FB-3D785EA72EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90971066-512F-4A31-B9FB-3D785EA72EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FEBFDF-D7CB-4BA0-BB06-B52F09486A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FEBFDF-D7CB-4BA0-BB06-B52F09486A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FEBFDF-D7CB-4BA0-BB06-B52F09486A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FEBFDF-D7CB-4BA0-BB06-B52F09486A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA9A7727-AB7D-4DE4-B469-3C261C15B8CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA9A7727-AB7D-4DE4-B469-3C261C15B8CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA9A7727-AB7D-4DE4-B469-3C261C15B8CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA9A7727-AB7D-4DE4-B469-3C261C15B8CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
