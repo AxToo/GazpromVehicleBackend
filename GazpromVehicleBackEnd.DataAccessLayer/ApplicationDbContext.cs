@@ -12,8 +12,8 @@ public class ApplicationDbContext : IdentityDbContext<User>
 
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
-        // Database.EnsureDeleted();
-        // Database.EnsureCreated();
+         Database.EnsureDeleted();
+         Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

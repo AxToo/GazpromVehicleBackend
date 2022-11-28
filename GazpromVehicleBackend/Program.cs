@@ -45,6 +45,7 @@ var authenticationConfiguration = new AuthConfiguration();
 builder.Configuration.Bind("Authentication", authenticationConfiguration);
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
 builder.Services.AddScoped<AccessTokenGenerator>();
 
 builder.Services.AddSingleton<TokenGenerator>();
@@ -71,7 +72,7 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
-//app.AddTestData();
+app.AddTestData();
 
 
 if (app.Environment.IsDevelopment())
