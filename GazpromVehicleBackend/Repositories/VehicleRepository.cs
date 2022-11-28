@@ -1,6 +1,7 @@
 ﻿using GazpromVehicleBackEnd.DataAccessLayer;
 using GazpromVehicleBackEnd.DataAccessLayer.Entity;
 using GazpromVehicleBackend.Shared.Models.Requests;
+using GazpromVehicleBackend.Shared.Models.Responses;
 using Microsoft.EntityFrameworkCore;
 
 namespace GazpromVehicleBackend.Repositories;
@@ -13,6 +14,13 @@ public class VehicleRepository : IVehicleRepository
     {
         _context = context;
     }
+
+    public async Task<List<VehicleDto>> GetAllVehicles() => await _context.Vehicles.Select(v => new VehicleDto
+    {
+        Brand = v.Brand,
+        RegistrationNumber = v.RegistrationNumber,
+        IsChecked = v.IsChecked
+    }).ToListAsync();
 
     public async Task<bool> AddVehicle(AddVehicleRequest request)
     {

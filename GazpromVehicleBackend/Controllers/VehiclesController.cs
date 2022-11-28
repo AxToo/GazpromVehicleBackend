@@ -1,5 +1,6 @@
 ﻿using GazpromVehicleBackend.Repositories;
 using GazpromVehicleBackend.Shared.Models.Requests;
+using GazpromVehicleBackend.Shared.Models.Responses;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,13 @@ public class VehiclesController : ControllerBase
     {
         _vehicleRepository = vehicleRepository;
     }
-    
+
+    [HttpGet]
+    public async Task<List<VehicleDto>> GetAllVehicles()
+    {
+        return await _vehicleRepository.GetAllVehicles();
+    }
+
     [HttpPost]
     [Route("Add")]
     public async Task<ActionResult> AddVehicle([FromBody] AddVehicleRequest request)

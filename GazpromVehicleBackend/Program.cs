@@ -72,7 +72,7 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
-app.AddTestData();
+//app.AddTestData();
 
 
 if (app.Environment.IsDevelopment())
