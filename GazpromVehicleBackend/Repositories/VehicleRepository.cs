@@ -49,4 +49,16 @@ public class VehicleRepository : IVehicleRepository
         return true;
     }
 
+    public async Task<bool> RemoveVehicleByRegNumber(string regNumber)
+    {
+        var vehicle = await _context.Vehicles.AsNoTracking()
+            .FirstOrDefaultAsync(v => v.RegistrationNumber == regNumber);
+        if (vehicle == null) return false;
+
+        _context.Vehicles.Remove(vehicle);
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
+
 }

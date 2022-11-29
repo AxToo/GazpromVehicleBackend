@@ -38,14 +38,26 @@ public class VehiclesController : ControllerBase
     }
 
     [HttpDelete]
-    [Route("Remove")]
-    public async Task<ActionResult> RemoveVehicle([FromBody] RemoveVehicleRequest request)
+    [Route("RemoveById")]
+    public async Task<ActionResult> RemoveVehicleById([FromBody] RemoveVehicleRequest request)
     {
         if (!ModelState.IsValid) return BadRequest();
 
         var result = await _vehicleRepository.RemoveVehicleById(request.VehicleId);
         if (!result) return BadRequest();
         
+        return Ok();
+    }
+
+    [HttpDelete]
+    [Route("RemoveByRegNumber")]
+    public async Task<ActionResult> RemoveVehicleByRegNumber([FromBody] RemoveVehicleRequest request)
+    {
+        if (!ModelState.IsValid) return BadRequest();
+
+        var result = await _vehicleRepository.RemoveVehicleByRegNumber(request.RegNumber);
+        if (!result) return BadRequest($"Registration Number {request.RegNumber} not found!");
+
         return Ok();
     }
 }
