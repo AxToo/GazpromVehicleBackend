@@ -37,7 +37,7 @@ public class UserRepository : IUserRepository
         return await _userManager.CheckPasswordAsync(user, password);
     }
 
-    public async Task<bool> AddUserAsync(string emailAddress, string password)
+    public async Task<bool> AddUserAsync(string emailAddress, string password, string role)
     {
         var existingUser = await _userManager.FindByEmailAsync(emailAddress);
 
@@ -52,7 +52,7 @@ public class UserRepository : IUserRepository
 
         var createdUserResult = await _userManager.CreateAsync(newUser, password);
         var user = await _userManager.FindByEmailAsync(emailAddress);
-        var addUserToRole = await _userManager.AddToRoleAsync(user, "User");
+        var addUserToRole = await _userManager.AddToRoleAsync(user, role);
 
         return createdUserResult.Succeeded && addUserToRole.Succeeded;
     }
@@ -82,9 +82,9 @@ public class UserRepository : IUserRepository
         return result.Succeeded;
     }
 
-    public async Task<bool> RemoveRole(string roleId)
+    public async Task<bool> RemoveRole(string name)
     {
-        var role = await _roleManager.FindByIdAsync(roleId);
+        var role = await _roleManager.FindByNameAsync(name);
         var result = await _roleManager.DeleteAsync(role);
 
         return result.Succeeded;
